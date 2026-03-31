@@ -1,0 +1,147 @@
+/* Footer.css — uses global CSS variables from index.css */
+
+.footer {
+  background: var(--color-navy);
+  color: rgba(255,255,255,0.6);
+  padding: var(--space-2xl) 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  gap: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-logo {
+  font-size: 1.4rem;
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+}
+
+.footer-brand p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.45);
+  max-width: 260px;
+}
+
+.footer-col h4 {
+  font-size: 0.95rem;
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+}
+
+.footer-col a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.88rem;
+  margin-bottom: 10px;
+  text-decoration: none;
+  width: fit-content;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+.footer-col a:hover { color: var(--color-amber); transform: translateX(3px); }
+
+/* Locked link */
+.footer-locked          { opacity: 0.35 !important; }
+.footer-locked:hover    { transform: none !important; color: rgba(255,255,255,0.35) !important; }
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg) 0;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.28);
+}
+
+/* ── Scroll to Top ── */
+.footer-scroll-top {
+  position: fixed;
+  bottom: 32px; right: 32px;
+  width: 44px; height: 44px;
+  background: var(--color-amber);
+  color: var(--color-navy);
+  border: none; border-radius: 50%;
+  font-size: 1.1rem; font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(244,161,29,0.4);
+  opacity: 0; transform: translateY(16px); pointer-events: none;
+  transition: all var(--transition);
+  z-index: 900;
+  display: flex; align-items: center; justify-content: center;
+}
+.footer-scroll-top--visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+.footer-scroll-top:hover    { background: var(--color-amber-dark); transform: translateY(-3px); }
+
+/* ── Toast — slides up from bottom ── */
+.footer-toast {
+  position: fixed;
+  bottom: 90px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 1100;
+  min-width: 320px; max-width: 500px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  animation: footerToastIn 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+
+@keyframes footerToastIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(14px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* Toast types */
+.footer-toast--warning { background: var(--color-navy);  border: 1.5px solid rgba(244,161,29,0.4); }
+.footer-toast--role    { background: #1a1a2e;             border: 1.5px solid rgba(244,161,29,0.5); }
+.footer-toast--wip     { background: #1c1a10;             border: 1.5px solid rgba(217,119,6,0.5); }  /* warm amber-dark for WIP */
+
+.footer-toast-inner {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: 14px 16px;
+}
+
+.footer-toast-inner p {
+  color: var(--color-white);
+  font-size: 0.88rem; font-weight: 600;
+  line-height: 1.5; flex: 1;
+}
+
+.footer-toast-btns { display: flex; align-items: center; gap: var(--space-sm); flex-shrink: 0; }
+
+.footer-toast-close {
+  background: rgba(255,255,255,0.1); border: none;
+  color: rgba(255,255,255,0.6);
+  width: 26px; height: 26px; border-radius: 50%;
+  cursor: pointer; font-size: 0.78rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--transition);
+  font-family: var(--font-body);
+}
+.footer-toast-close:hover { background: rgba(255,255,255,0.2); color: white; }
+
+.footer-toast-bar {
+  height: 3px; background: var(--color-amber);
+  animation: footerToastBar 4s linear forwards;
+}
+@keyframes footerToastBar { from { width: 100%; } to { width: 0%; } }
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .footer-grid  { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 520px) {
+  .footer-grid   { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  .footer-toast  { min-width: calc(100vw - 32px); }
+  .footer-scroll-top { bottom: 20px; right: 20px; }
+}

@@ -1,0 +1,53 @@
+/* TrustSafety.css */
+
+.trust-safety {
+  padding: var(--space-3xl) 0;
+  background: var(--color-gray-100);
+}
+
+.trust-safety-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.trust-safety-header h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: var(--space-sm);
+}
+
+.trust-safety-header p {
+  color: var(--color-gray-500);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* Trust features grid */
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+}
+
+.trust-item {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.trust-item-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-md);
+}
+
+.trust-item h3 {
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.trust-item p {
+  font-size: 0.88rem;
+  color: var(--color-gray-500);
+  line-height: 1.6;
+}

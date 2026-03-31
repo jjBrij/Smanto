@@ -1,0 +1,89 @@
+/* CTA.css */
+
+.cta {
+  background: linear-gradient(135deg, var(--color-amber) 0%, #e8910a 100%);
+  padding: 96px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle texture */
+.cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.05) 0px,
+    rgba(255,255,255,0.05) 1px,
+    transparent 1px,
+    transparent 40px
+  );
+}
+
+.cta-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-navy);
+  opacity: 0.65;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.cta h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--color-navy);
+  margin-bottom: 16px;
+  font-weight: 900;
+  position: relative;
+}
+
+.cta p {
+  color: rgba(13,27,42,0.7);
+  font-size: 1.05rem;
+  margin-bottom: 36px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+  position: relative;
+}
+
+.cta-actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.cta-btn-dark {
+  background: var(--color-navy);
+  color: var(--color-white);
+  border-color: var(--color-navy);
+  font-size: 1rem;
+  padding: 14px 36px;
+  box-shadow: 0 4px 20px rgba(13,27,42,0.25);
+}
+
+.cta-btn-dark:hover {
+  background: var(--color-navy-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(13,27,42,0.3);
+}
+
+.cta-btn-outline {
+  background: rgba(255,255,255,0.25);
+  border: 2px solid rgba(13,27,42,0.3);
+  color: var(--color-navy);
+  font-size: 1rem;
+  padding: 14px 32px;
+}
+
+.cta-btn-outline:hover {
+  background: rgba(255,255,255,0.45);
+  transform: translateY(-2px);
+}

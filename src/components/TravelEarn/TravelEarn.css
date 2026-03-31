@@ -1,0 +1,118 @@
+/* TravelEarn.css — For Travelers section */
+
+.travel-earn {
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: var(--space-3xl) 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative diagonal stripe */
+.travel-earn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(255,255,255,0.015) 0px,
+    rgba(255,255,255,0.015) 1px,
+    transparent 1px,
+    transparent 60px
+  );
+  pointer-events: none;
+}
+
+.travel-earn-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.travel-earn-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-amber);
+  margin-bottom: 16px;
+  border: 1px solid rgba(244,161,29,0.3);
+  padding: 5px 16px;
+  border-radius: var(--radius-full);
+}
+
+.travel-earn-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.travel-earn-title span {
+  color: var(--color-amber);
+}
+
+.travel-earn-sub {
+  color: rgba(255,255,255,0.65);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 580px;
+  margin: 0 auto 48px;
+}
+
+/* 2×2 perks grid */
+.travel-earn-perks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.earn-perk {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.earn-perk:hover {
+  background: rgba(255,255,255,0.09);
+  transform: translateY(-3px);
+}
+
+.earn-perk-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.earn-perk h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 5px;
+}
+
+.earn-perk p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+}
+
+.travel-earn-cta {
+  font-size: 1rem;
+  padding: 14px 36px !important;
+  box-shadow: 0 4px 20px rgba(244,161,29,0.3);
+}
+
+@media (max-width: 600px) {
+  .travel-earn-perks { grid-template-columns: 1fr; }
+}
