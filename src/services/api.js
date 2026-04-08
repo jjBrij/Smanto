@@ -132,16 +132,14 @@ export async function postTravelPlan(formData) {
   if (formData.notes)
     fd.append('notes', formData.notes)
 
-  const res = await fetch('${BASE_URL}/travel/', {
+  const res = await fetch(`${BASE_URL}/travel/`, {
     method: 'POST',
     headers: { Authorization: `Bearer ${token}` },
     body: fd,
   })
-   .then(async res => {
-     const data = await res.json()
-     if (!res.ok) throw new Error(JSON.stringify(data))
-     return data
-  })
+    const data = await res.json()
+  if (!res.ok) throw new Error(JSON.stringify(data))
+  return data
 }
 // src/services/api.js
 
